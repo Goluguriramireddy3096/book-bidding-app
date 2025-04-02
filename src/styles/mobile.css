@@ -1,0 +1,102 @@
+
+/* Mobile-specific styles */
+
+@media (max-width: 768px) {
+  .book-card {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+  
+  /* Custom animations for mobile */
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Improve tap target sizes for mobile */
+  button, 
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve form field sizes on mobile */
+  input, 
+  textarea, 
+  select {
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+  
+  /* Fix for dropdown menus on mobile */
+  [data-radix-popper-content-wrapper] {
+    z-index: 999 !important; /* Ensure dropdowns appear above other elements */
+  }
+  
+  .mobile-dropdown {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: white;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Shared responsive styles */
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Book card animations */
+.book-card {
+  animation: fade-in 0.6s ease-out forwards;
+}
+
+/* Shadow effects */
+.shadow-book {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-smooth {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix for dropdown menus on all devices */
+.dropdown-menu-content {
+  z-index: 999 !important;
+  background-color: white !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
